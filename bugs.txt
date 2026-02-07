@@ -1,0 +1,23 @@
+login
+sign up
+book appointment
+admin login
+doctor login
+--bug-- show completed appointment in user appointment section also
+admin dashboard - complete and cancel appointment
+admin dashboard loading
+admin appointments complete and cancel appointment
+admin appointments loading
+admin add doctor
+admin doctors list\
+admin doctors availability changing
+
+doctor dashboard loading
+doctor dashboard appointment cancel and complete
+doctor appointments loading
+doctor appointments cancel and complete
+doctor profile update
+
+logout all
+user appointment complete backend bug
+banner button
