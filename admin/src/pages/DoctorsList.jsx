@@ -29,7 +29,7 @@ function DoctorsList() {
         {loading?<Loading actionName={"Updating doctor status..."}/>:""}
             <div>
                 <p className="text-lg font-semibold my-5">All Doctors</p>
-                <div className="flex gap-2">
+                <div className="flex gap-2 flex-wrap">
                     {
                         allDoctors.map((doctor) =>
                             <div className="w-45 border border-gray-300 rounded-lg" key={doctor._id}>

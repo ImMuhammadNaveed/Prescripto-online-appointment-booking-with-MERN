@@ -11,14 +11,14 @@ function TopDoctors() {
 
     return (
         <>
-            <div className='w-[80%] mx-auto justify-center'>
+            <div className='w-[83%] mx-auto justify-center'>
                 <p className='text-center text-3xl pb-5 font-medium'>Top Doctors to Book</p>
-                <p className='text-center text-sm w-80 m-auto'>Simply browse through our extensive list of trusted doctors.</p>
+                <p className='text-center text-sm w-80 m-auto mb-4'>Simply browse through our extensive list of trusted doctors.</p>
                 <div className='flex flex-wrap justify-center'>
                     {
                         topDoc.map((item, index) => (
-                            <div onClick={() => navigate(`/appointment/${item._id}`)} key={index} className='w-[23%] border-1 border-gray-300 m-2 rounded-xl cursor-pointer'>
-                                <img src={item.image} alt="" className='w-full h-55 object-cover bg-indigo-50 rounded-xl' />
+                            <div onClick={() => navigate(`/appointment/${item._id}`)} key={index} className='w-[18%] border-1 border-gray-300 m-2 rounded-xl cursor-pointer'>
+                                <img src={item.image} alt="" className='w-full h-45 object-cover bg-indigo-50 rounded-xl' />
                                 <div className='ml-5 mb-5'>
                                     <div className='flex text-xs mt-5'>
                                         <div className='w-2.5 h-2.5 bg-green-500 rounded-full mr-1 mt-1'></div>

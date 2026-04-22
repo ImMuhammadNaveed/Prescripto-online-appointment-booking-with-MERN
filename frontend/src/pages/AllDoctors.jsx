@@ -54,7 +54,7 @@ function AllDoctors() {
                         <div className='flex flex-wrap justify-center'>
                             {
                                 fillDoctors.map((item, index) => (
-                                    <div onClick={() => navigate(`/appointment/${item._id}`)} key={index} className='w-60 border-1 border-gray-300 m-2 rounded-md cursor-pointer'>
+                                    <div onClick={() => navigate(`/appointment/${item._id}`)} key={index} className='w-44 border-1 border-gray-300 m-2 rounded-md cursor-pointer'>
                                         <img className="bg-indigo-50" src={item.image} alt="" />
                                         <div className="p-4">
                                             <div className='flex text-xs'>
