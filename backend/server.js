@@ -11,7 +11,7 @@ const {doctorRouter} = require("./router/doctorRoutes")
 
 connectToDB()
 connectToCloudinary()
-const allowedOrigins = ["http://localhost:5173", "http://localhost:5174"]
+const allowedOrigins = [process.env.FRONTEND_URL, "http://localhost:5174"]
 app.use(cors({origin: allowedOrigins, credentials:true}))
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
