@@ -61,7 +61,11 @@ async function adminLogin(req, res) {
             return res.status(400).json({ success: false, message: "Incorrect cridentials" })
         }
         const token = sign(email + " " + password)
-        res.cookie("aToken", token)
+        res.cookie("aToken", token, {
+            httpOnly: true,
+            secure: true,
+            sameSite: "none"
+        })
         return res.status(200).json({ success: true, message: "Admin logged in successfully" })
     } catch (error) {
         return res.status(400).json({success: false, message:error.message})
