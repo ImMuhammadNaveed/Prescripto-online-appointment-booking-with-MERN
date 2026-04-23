@@ -13,9 +13,9 @@ function Navbar() {
     const navigate = useNavigate()
     const location = useLocation()
     const isActive=(path)=>location.pathname===path
-
+    const adminUrl = import.meta.env.VITE_ADMIN_URL
     function redirectToAdmin() {
-        window.location.href = "http://localhost:5174/"
+        window.location.href = adminUrl
     }
     async function handleLogout() {
         try {
