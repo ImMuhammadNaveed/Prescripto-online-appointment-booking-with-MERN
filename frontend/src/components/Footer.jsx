@@ -29,7 +29,7 @@ function Footer() {
             </div>
         </div>
         <hr className='mb-[20px] mt-[20px] text-gray-200'/>
-        <p className='text-center text-sm'>Copyright 2024 @ Greatstack.dev - All Right Reserved.</p>
+        <p className='text-center text-sm'>Copyright 2026 @ Muhammad Naveed - All Right Reserved.</p>
         </div>
         </>
     )

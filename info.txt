@@ -1,0 +1,2 @@
+frontend: https://prescripto-online-appointment-booking-with-mern-production-de26.up.railway.app
+backend: https://prescripto-online-appointment-booking-with-mern-production.up.railway.app
