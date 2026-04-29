@@ -50,7 +50,7 @@ async function login(req, res) {
         }
         const uToken = sign(user._id)
         res.cookie("uToken", uToken, {
-            // httpOnly: tsrue,
+            httpOnly: false,
             secure: true,
             sameSite: "none"
         })
