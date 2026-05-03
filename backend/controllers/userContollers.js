@@ -52,7 +52,7 @@ async function login(req, res) {
         res.cookie("uToken", uToken, {
             httpOnly: true,
             secure: true,
-            sameSite: "none"
+            sameSite: false
         })
         return res.status(200).json({ success: true, message: "User successfully logged in!" })
     } catch (error) {
