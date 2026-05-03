@@ -57,7 +57,9 @@ function Navbar() {
                         isLoggedIn
                         ?<div className="relative group">
                             <div className="flex gap-2 items-center">
-                                <img src={userData?userData.image:assets.upload_area} alt="" className="w-17 object-contain rounded-full"/>
+                                <div className="h-16 w-16 rounded-full overflow-hidden">
+                                    <img src={userData?userData.image:assets.upload_area} alt="" className="object-cover w-full h-full"/>
+                                </div>
                                 <img src={assets.dropdown_icon} alt="" className="w-3 object-contain" />
                                 {/* {console.log("navbar: ",uToken)} */}
                             </div>
