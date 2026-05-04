@@ -24,12 +24,15 @@ function DoctorsList() {
             setLoading(false)
         }
     }
+    if(!allDoctors.length){
+        return <Loading actionName={"Loading doctors..."}/>
+    }
     return allDoctors && (
         <>
         {loading?<Loading actionName={"Updating doctor status..."}/>:""}
             <div>
                 <p className="text-lg font-semibold my-5">All Doctors</p>
-                <div className="flex gap-2 flex-wrap">
+                <div className="flex gap-2 flex-wrap mb-4">
                     {
                         allDoctors.map((doctor) =>
                             <div className="w-45 border border-gray-300 rounded-lg" key={doctor._id}>

@@ -98,7 +98,7 @@ function AdminAppointments(params) {
                                 <td className="text-sm text-gray-600">{index + 1}</td>
                                 <td>
                                     <div className="flex items-center">
-                                        <img src={appointment.userData.image} alt="" className="w-15 rounded-full" />
+                                        <img src={appointment.userData.image} alt="" className="w-15 h-15 object-cover rounded-full" />
                                         <p className="text-sm text-gray-600 ml-2">{appointment.userData.name}</p>
                                     </div>
                                 </td>
@@ -106,7 +106,7 @@ function AdminAppointments(params) {
                                 <td className="text-sm text-gray-600">{appointment.slotDate}, {appointment.slotTime}</td>
                                 <td>
                                     <div className="flex items-center">
-                                        <img src={appointment.doctorData.image} alt="" className="w-15 rounded-full" />
+                                        <img src={appointment.doctorData.image} alt="" className="w-15 h-15 object-cover rounded-full" />
                                         <p className="text-sm text-gray-600 ml-2">{appointment.doctorData.name}</p>
                                     </div>
                                 </td>

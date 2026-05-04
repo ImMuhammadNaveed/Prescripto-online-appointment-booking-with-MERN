@@ -6,7 +6,7 @@ export const adminContext = createContext()
 export function AdminContextProvider({children}) {
     const backend_url = import.meta.env.VITE_BACKEND_URL
     const [isALoggedIn, setIsALoggedIn] = useState(false)
-    const [allDoctors, setAllDoctors] = useState(false)
+    const [allDoctors, setAllDoctors] = useState([])
     const [aLoading, setALoading] = useState(true)
 
     async function getAllDoctors() {
@@ -19,7 +19,9 @@ export function AdminContextProvider({children}) {
             console.log(error.response.data)
         }
     }
-    useEffect(()=>{getAllDoctors()},[])
+    useEffect(()=>{
+        getAllDoctors()
+    },[isALoggedIn])
     async function checkLogin() {
     try {
         const { data } = await axios.get(backend_url + "/api/admin/check-login",{ withCredentials: true })

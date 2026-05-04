@@ -20,22 +20,30 @@ function TopDoctors() {
                             <div onClick={() => navigate(`/appointment/${item._id}`)} key={index} className='w-[18%] border-1 border-gray-300 m-2 rounded-xl cursor-pointer'>
                                 <img src={item.image} alt="" className='w-full h-45 object-cover bg-indigo-50 rounded-xl' />
                                 <div className='ml-5 mb-5'>
-                                    <div className='flex text-xs mt-5'>
-                                        <div className='w-2.5 h-2.5 bg-green-500 rounded-full mr-1 mt-1'></div>
-                                        <p className='text-green-500'>Available</p>
-                                    </div>
+                                    {
+                                        item.available
+                                            ? <div className='flex text-xs mt-5'>
+                                                <div className='w-2.5 h-2.5 bg-green-500 rounded-full mr-1 mt-[2px] '></div>
+                                                <p className='text-green-500'>Available</p>
+                                            </div>
+                                            : <div className='flex text-xs mt-5'>
+                                                <div className='w-2.5 h-2.5 bg-red-500 rounded-full mr-1 mt-[2px]'></div>
+                                                <p className='text-red-500'>Unavailable</p>
+                                            </div>
+                                    }
+
                                     <p className='font-semibold text-base my-1'>{item.name}</p>
                                     <p className='text-sm text-gray-600'>{item.speciality}</p>
                                 </div>
                             </div>
                         ))
                     }
-                    
+
                 </div>
                 <div className='flex justify-center my-10'>
-                    <button className='bg-indigo-50 px-10 py-3 m-auto rounded-full text-gray-600 cursor-pointer' onClick={()=>navigate('/doctors')}>more</button>
+                    <button className='bg-indigo-50 px-10 py-3 m-auto rounded-full text-gray-600 cursor-pointer' onClick={() => navigate('/doctors')}>more</button>
                 </div>
-                
+
             </div>
         </>
     )

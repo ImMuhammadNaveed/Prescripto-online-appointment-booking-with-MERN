@@ -3,6 +3,7 @@ import { assets } from "../assets/assets"
 import { useNavigate } from 'react-router-dom'
 import { userContext } from "../context/Context"
 import { useContext } from "react"
+import { Link } from "react-router-dom"
 import axios from "axios"
 import { useLocation } from "react-router-dom"
 import Loading from '../components/Loading'
@@ -37,7 +38,9 @@ function Navbar() {
         {loading? <Loading actionName={"Logging out..."}/>:""}
             <div className="w-[80%] m-auto">
                 <div className="flex justify-between items-center py-4">
-                    <img src={assets.logo} alt="" className="w-43 object-contain" />
+                    <Link to='/'>
+                        <img src={assets.logo} alt="" className="w-43 object-contain" />
+                    </Link>
                     <ul className="flex gap-8 items-center">
                         <li className={`cursor-pointer text-sm font-medium ${isActive('/')?"text-primary":""}`} onClick={() => navigate("/")}>
                             HOME

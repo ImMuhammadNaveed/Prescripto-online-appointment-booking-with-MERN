@@ -22,10 +22,10 @@ function Login() {
                 const {data} = await axios.post(backend_url+"/api/admin/login", {email, password}, {withCredentials:true})
                 if(data.success){
                     setIsALoggedIn(true)
-                    alert(data.message)
                 }
+                alert(data.message)
             } catch (error) {
-                console.log(error.message)
+                alert(error.response.data.message)
             }finally{
                 setLoading(false)
             }

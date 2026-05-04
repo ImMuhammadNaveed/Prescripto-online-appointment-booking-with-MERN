@@ -1,4 +1,5 @@
 import {assets} from '../assets/assets.js'
+import {Link} from 'react-router-dom'
 function Footer() {
     return(
         <>
@@ -12,18 +13,18 @@ function Footer() {
             {/* ------------middle------------ */}
             <div className='w-[20%]'>
                 <p className='mb-5 text-xl font-medium'>COMPANY</p>
-                <ul>
-                    <li className='text-gray-600 text-sm mb-3'>Home</li>
-                    <li className='text-gray-600 text-sm mb-3'>About us</li>
-                    <li className='text-gray-600 text-sm mb-3'>Delivery</li>
-                    <li className='text-gray-600 text-sm mb-3'>Privacy policy</li>
-                </ul>
+                <div className='flex flex-col'>
+                    <Link to='/' className='text-gray-600 text-sm mb-3'>Home</Link>
+                    <Link to='/about' className='text-gray-600 text-sm mb-3'>About us</Link>
+                    <Link className='text-gray-600 text-sm mb-3'>Delivery</Link>
+                    <Link className='text-gray-600 text-sm mb-3'>Privacy policy</Link>
+                </div>
             </div>
             {/* -----------right side--------- */}
             <div className='w-[20%]'>
                 <p className='mb-5 text-xl font-medium'>GET IN TOUCH</p>
                 <ul>
-                    <li className='text-gray-600 text-sm mb-3'>+0-000-000-000</li>
+                    <li className='text-gray-600 text-sm mb-3'>+92320-5296949</li>
                     <li className='text-gray-600 text-sm mb-3'>itsnaveed277@gmail.com</li>
                 </ul>
             </div>

@@ -71,7 +71,7 @@ function Login() {
                                 <input 
                                     type="text" 
                                     id="name" 
-                                    className="border w-full border-gray-300 rounded-md h-9" 
+                                    className="border w-full border-gray-300 rounded-md h-9 pl-1" 
                                     value={name}
                                     onChange={(e)=>{setName(e.target.value)}}
                                 />
@@ -83,7 +83,7 @@ function Login() {
                         <input 
                             type="email" 
                             id="email" 
-                            className="border border-gray-300 rounded-md h-9" 
+                            className="border border-gray-300 rounded-md h-9 pl-1" 
                             value={email}
                             onChange={(e)=>setEmail(e.target.value)}
                         />
@@ -93,13 +93,13 @@ function Login() {
                         <input 
                             type="password" 
                             id="password" 
-                            className="border border-gray-300 rounded-md h-9" 
+                            className="border border-gray-300 rounded-md h-9 pl-1" 
                             value={password}
                             onChange={(e)=>setPassword(e.target.value)}
                         />
                     </div>
 
-                    <button className="border w-full text-center bg-primary text-white py-2 rounded-lg mt-3">
+                    <button className="border w-full text-center bg-primary text-white py-2 rounded-lg mt-3 cursor-pointer">
                         {account === "Sign up" ? "Create account" : "Login"}
                     </button>
                     {

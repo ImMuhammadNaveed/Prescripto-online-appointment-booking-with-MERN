@@ -112,7 +112,7 @@ function AdminDashboard() {
                         dashboardData.appointments.map((appointment, index) =>
                             <div key={index} className="flex items-center justify-between mb-2">
                                 <div className="flex items-center">
-                                    <img className="w-20 rounded-full" src={appointment.userData.image} alt="" />
+                                    <img className="w-17 h-17 object-cover rounded-full" src={appointment.userData.image} alt="" />
                                     <div className="ml-2">
                                         <p className="font-semibold text-lg">{appointment.userData.name}</p>
                                         <p className="text-gray-600 text-sm">Booking on {appointment.slotDate}</p>

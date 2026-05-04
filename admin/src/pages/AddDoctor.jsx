@@ -78,7 +78,10 @@ function AddDoctor() {
                 <form onSubmit={handleSubmit}>
                     <div className="flex items-center">
                         <label htmlFor="img" className="mb-2 cursor-pointer">
-                            <img src={image !== false ? URL.createObjectURL(image) : assets.upload_area} alt="" />
+                            <img src={image !== false ? URL.createObjectURL(image) : assets.upload_area} 
+                            alt="" 
+                            className="h-30 w-30 object-cover"
+                            />
                         </label>
                         <input className="border border-gray-200 py-1 px-2 rounded-lg hidden w-60" type="file" id="img" onChange={(e) => setImage(e.target.files[0])} />
                         <p className="text-sm text-gray-600 ml-1">Upload doctor <br /> picture</p>
