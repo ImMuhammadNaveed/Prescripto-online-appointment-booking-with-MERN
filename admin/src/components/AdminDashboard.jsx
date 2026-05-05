@@ -61,10 +61,10 @@ function AdminDashboard() {
 
     function appointmentStatus(appointment) {
         if (appointment.cancelAppointment) {
-            return (<p className="text-red-500">Cancelled</p>)
+            return (<p className="text-sm text-red-500">Cancelled</p>)
         }
         if (appointment.isCompleted) {
-            return (<p className="text-green-500">Completed</p>)
+            return (<p className="text-sm text-green-500">Completed</p>)
         }
         return (
             <>
@@ -86,21 +86,21 @@ function AdminDashboard() {
                 <div className="flex justify-between gap-5">
                     <div className="flex items-center justify-center border border-gray-200 py-3 px-10 rounded-xl">
                         <img src={assets.doctor_icon} alt="" />
-                        <div>
+                        <div className="ml-2">
                             <p>{dashboardData.numberOfDoctors}</p>
                             <p>Doctors</p>
                         </div>
                     </div>
                     <div className="flex items-center justify-center border border-gray-200 py-3 px-10 rounded-xl">
                         <img src={assets.appointments_icon} alt="" />
-                        <div>
+                        <div className="ml-2">
                             <p>{dashboardData.numberOfAppointments}</p>
                             <p>Appointments</p>
                         </div>
                     </div>
                     <div className="flex items-center justify-center border border-gray-200 py-3 px-10 rounded-xl">
                         <img src={assets.patients_icon} alt="" />
-                        <div>
+                        <div className="ml-2">
                             <p>{dashboardData.numberOfUsers}</p>
                             <p>Patients</p>
                         </div>
@@ -110,9 +110,9 @@ function AdminDashboard() {
                     <p className="flex items-center font-semibold text-lg my-7 mx-2"><img src={assets.list_icon} className="mr-1" alt="" />Latest Bookings</p>
                     {
                         dashboardData.appointments.map((appointment, index) =>
-                            <div key={index} className="flex items-center justify-between mb-2">
+                            <div key={index} className="flex items-center justify-between mb-4">
                                 <div className="flex items-center">
-                                    <img className="w-17 h-17 object-cover rounded-full" src={appointment.userData.image} alt="" />
+                                    <img className="w-15 h-15 object-cover rounded-full" src={appointment.userData.image} alt="" />
                                     <div className="ml-2">
                                         <p className="font-semibold text-lg">{appointment.userData.name}</p>
                                         <p className="text-gray-600 text-sm">Booking on {appointment.slotDate}</p>

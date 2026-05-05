@@ -104,7 +104,7 @@ function Profile() {
                 <div className="my-2">
                 <label htmlFor="">
                     {edit
-                    ?<input type="checkbox" className="mr-1" checked={available} onChange={(e)=>{setAvailability(e.target.checked)}} />
+                    ?<input type="checkbox" className="mr-1 cursor-pointer" checked={available} onChange={(e)=>{setAvailability(e.target.checked)}} />
                     :<input type="checkbox" className="mr-1" name="" id="" checked={docData.available} />
                     }
                     Available

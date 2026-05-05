@@ -67,9 +67,9 @@ function DoctorDashboard() {
             return (<p className="text-sm text-green-500">Completed</p>)
         }
         return (
-            <div>
-                <button onClick={() => handleCompleteAppointment(appointment._id)}><img src={assets.tick_icon} alt="" className="w-10" /></button>
-                <button onClick={() => handleCancelAppointment(appointment._id)}><img src={assets.cancel_icon} alt="" className="w-10" /></button>
+            <div className="flex">
+                <button onClick={() => handleCompleteAppointment(appointment._id)}><img src={assets.tick_icon} alt="" className="w-10 cursor-pointer" /></button>
+                <button onClick={() => handleCancelAppointment(appointment._id)}><img src={assets.cancel_icon} alt="" className="w-10 cursor-pointer" /></button>
             </div>
         )
     }
@@ -86,21 +86,24 @@ function DoctorDashboard() {
                 <div className="flex justify-between gap-5">
                     <div className="flex items-center justify-center border border-gray-200 py-3 px-10 rounded-xl">
                         <img src={assets.earning_icon} alt="" />
-                        <div>
+                        <div className="ml-2">
                             <p>{dashboardData.earnings}</p>
                             <p>Earnings</p>
                         </div>
                     </div>
                     <div className="flex items-center justify-center border border-gray-200 py-3 px-10 rounded-xl">
-                        <img src={assets.appointments_icon} alt="" />
-                        <div>
+                        <img 
+                        src={assets.appointments_icon} 
+                        alt="" 
+                        />
+                        <div className="ml-2">
                             <p>{dashboardData.numberOfAppointments}</p>
                             <p>Appointments</p>
                         </div>
                     </div>
                     <div className="flex items-center justify-center border border-gray-200 py-3 px-10 rounded-xl">
                         <img src={assets.patients_icon} alt="" />
-                        <div>
+                        <div className="ml-2">
                             <p>{dashboardData.numberOfPatients}</p>
                             <p>Patients</p>
                         </div>
@@ -110,9 +113,9 @@ function DoctorDashboard() {
                     <p className="flex items-center font-semibold text-lg my-7 mx-2">Latest Bookings</p>
                     {
                         dashboardData.appointments.map((appointment, index) =>
-                            <div key={index} className="flex items-center justify-between mb-2">
+                            <div key={index} className="flex items-center justify-between mb-4">
                                 <div className="flex items-center">
-                                    <img className="w-15 rounded-full" src={appointment.userData.image} alt="" />
+                                    <img className="w-15 h-15 object-cover rounded-full" src={appointment.userData.image} alt="" />
                                     <div className="ml-2">
                                         <p className="font-semibold text-lg">{appointment.userData.name}</p>
                                         <p className="text-gray-600 text-sm">Booking on {appointment.slotDate}</p>

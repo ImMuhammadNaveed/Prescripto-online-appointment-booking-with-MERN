@@ -94,7 +94,7 @@ function AdminAppointments(params) {
                 <tbody>
                     {
                         appointments.map((appointment, index) => (
-                            <tr key={appointment._id} className="mb-3">
+                            <tr key={appointment._id} className="mb-4">
                                 <td className="text-sm text-gray-600">{index + 1}</td>
                                 <td>
                                     <div className="flex items-center">
