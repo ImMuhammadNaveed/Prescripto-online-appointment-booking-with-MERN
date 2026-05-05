@@ -20,7 +20,7 @@ function Navbar() {
                 const {data} = await axios.post(backend_url+"/api/admin/logout", {}, {withCredentials: true})
                 alert(data.message)
             } catch (error) {
-                alert(error.message)
+                alert(error.response.data.message)
             }finally{
                 setLoading(false)
             }
