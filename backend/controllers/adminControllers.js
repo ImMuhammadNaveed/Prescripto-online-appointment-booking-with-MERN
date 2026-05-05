@@ -144,7 +144,11 @@ async function cancelAppointment(req, res) {
 async function logout(req, res) {
     try {
         console.log("admin logout triggered")
-        res.clearCookie("aToken")
+        res.clearCookie("aToken", {
+            httpOnly: true,
+            secure: true,
+            sameSite: "none"
+        })
         return res.status(200).json({success: true, message: "admin successfully logged out!"})
     } catch (error) {
         return res.status(500).json({success: false, message: error.message})
