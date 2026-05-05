@@ -36,7 +36,8 @@ async function doctorAppointments(req, res) {
         console.log("doctor appointments controller triggered")
         const docId = req.docId
         const appointments = await appointmentModel.find({})
-        const doctorAppointments = appointments.filter((appointment) => appointment.doctorData._id == docId)
+        let doctorAppointments = appointments.filter((appointment) => appointment.doctorData._id == docId)
+        doctorAppointments = doctorAppointments.reverse()
         return res.status(200).json({ success: true, data: doctorAppointments })
     } catch (error) {
         return res.status(500).json({ success: false, message: error.message })
@@ -66,13 +67,14 @@ async function doctorDashboard(req, res) {
         const docId = req.docId
         let earning = 0
         const appointments = await appointmentModel.find({})
-        const doctorAppointments = appointments.filter((appointment) => appointment.doctorData._id == docId)
+        let doctorAppointments = appointments.filter((appointment) => appointment.doctorData._id == docId)
         doctorAppointments.forEach((appointment) => {
             if (appointment.isCompleted) {
                 earning += appointment.amount
             }
         })
         // console.log("This doctor appointments length :", doctorAppointments.length)
+        doctorAppointments = doctorAppointments.reverse()
         const appointmentsLength = doctorAppointments.length
 
         let uniquePatients = new Set()

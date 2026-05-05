@@ -106,7 +106,8 @@ async function adminDashboard(req, res) {
         const doctorsLength = allDoctors.length
         const allUsers = await userModel.find({})
         const usersLenght = allUsers.length
-        const allAppointments = await appointmentModel.find({})
+        let allAppointments = await appointmentModel.find({})
+        allAppointments = allAppointments.reverse()
         const appointmentsLength = allAppointments.length
         const appointments = allAppointments.slice(0, 5)
         const data = {
@@ -181,7 +182,8 @@ async function completeAppointment(req, res) {
 
 async function allAppointments(req, res) {
     try {
-        const data = await appointmentModel.find({})
+        let data = await appointmentModel.find({})
+        data = data.reverse()
         return res.status(200).json({success: true, data: data})
     } catch (error) {
         return res.status(500).json({success: false, message: error.message})

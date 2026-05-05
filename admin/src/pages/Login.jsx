@@ -9,45 +9,45 @@ function Login() {
     const [state, setState] = useState("Admin")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const {backend_url, setIsALoggedIn} = useContext(adminContext)
-    const {setIsDLoggedIn} = useContext(doctorContext)
+    const { backend_url, setIsALoggedIn } = useContext(adminContext)
+    const { setIsDLoggedIn } = useContext(doctorContext)
     const [loading, setLoading] = useState(false)
 
     async function handleSubmit(e) {
         e.preventDefault()
         // console.log(backend_url)
-        if(state==="Admin"){
+        if (state === "Admin") {
             try {
                 setLoading(true)
-                const {data} = await axios.post(backend_url+"/api/admin/login", {email, password}, {withCredentials:true})
-                if(data.success){
+                const { data } = await axios.post(backend_url + "/api/admin/login", { email, password }, { withCredentials: true })
+                if (data.success) {
                     setIsALoggedIn(true)
                 }
                 alert(data.message)
             } catch (error) {
                 alert(error.response.data.message)
-            }finally{
+            } finally {
                 setLoading(false)
             }
-        }else{
+        } else {
             try {
                 setLoading(true)
-                const {data} = await axios.post(backend_url+"/api/doctor/login",{email:email, password:password}, {withCredentials:true})
-                if(data.success){
+                const { data } = await axios.post(backend_url + "/api/doctor/login", { email: email, password: password }, { withCredentials: true })
+                if (data.success) {
                     setIsDLoggedIn(true)
                     alert(data.message)
                 }
             } catch (error) {
                 alert(error.response.data.message)
-            }finally{
+            } finally {
                 setLoading(false)
             }
         }
-        
+
     }
     return (
         <>
-        {loading?<Loading actionName={"Checking Credentials..."}/>:""}
+            {loading ? <Loading actionName={"Checking Credentials..."} /> : ""}
             <div className="flex justify-center items-center">
                 <form onSubmit={handleSubmit} className="w-80 border border-gray-200 rounded-lg p-5 mt-40">
                     <p className="text-3xl font-semibold flex justify-center"><span className="text-primary mr-2">{state}</span><p className="text-gray-600">Login</p></p>
