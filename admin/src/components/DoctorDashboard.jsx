@@ -23,7 +23,7 @@ function DoctorDashboard() {
                 alert(data.message)
             }
         } catch (error) {
-            console.log(error.response.data.message)
+            alert(error.response.data.message)
         }finally{
             setLoading(false)
         }

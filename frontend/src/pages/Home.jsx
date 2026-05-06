@@ -3,12 +3,12 @@ import SpecialityMenu from "../components/SpecialityMenu"
 import Banner from "../components/Banner"
 import TopDoctors from '../components/TopDoctors'
 function Home() {
-    return(
+    return (
         <>
-        <Header/>
-        <SpecialityMenu/>
-        <TopDoctors/>
-        <Banner/>
+            <Header />
+            <SpecialityMenu />
+            <TopDoctors />
+            <Banner />
         </>
     )
 }

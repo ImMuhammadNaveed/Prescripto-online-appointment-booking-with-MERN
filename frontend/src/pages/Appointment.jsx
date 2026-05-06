@@ -40,9 +40,9 @@ function Appointment() {
 
     return (
         <>
-            <div className="w-[80%] m-auto">
-                <div className="flex items-center">
-                    <img src={docInfo&& docInfo.image} alt="" className="w-62 object-contain bg-primary rounded-lg"/>
+            <div className="w-[92%] md:w-[80%] m-auto">
+                <div className="flex md:flex-row flex-col items-center">
+                    <img src={docInfo&& docInfo.image} alt="" className="w-full md:w-62 object-contain bg-primary rounded-lg"/>
                     <div className="border border-gray-500 rounded-lg p-6 ml-3">
                         <p className="flex text-3xl font-semibold text-gray-600">{docInfo&& docInfo.name} <img className="w-5 ml-1" src={assets.verified_icon} alt="" /> </p>
                         <p className="text-gray-600">{docInfo&& docInfo.degree} - {docInfo&& docInfo.speciality}</p>
@@ -50,12 +50,10 @@ function Appointment() {
                         <p className="text-gray-600 text-sm">{docInfo&& docInfo.about}</p>
                         <p className="mt-3">Appointment fee: <span className="font-semibold">${docInfo&& docInfo.fee}</span></p>
                     </div>
-                    
                 </div>
-                <div className="ml-65">
+                <div >
                     <AppointmentBooking docId={docId}/>
                 </div>
-                
                 <RelatedDoctors docId={docId} speciality={docInfo&& docInfo.speciality}/>
             </div>
         </>

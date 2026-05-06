@@ -18,13 +18,13 @@ function RelatedDoctors({ docId, speciality }) {
 
     return allDoctors && (
         <>
-            <div className='w-[83%] mx-auto justify-center mt-15'>
+            <div className='w-[92%] md:w-[83%] mx-auto justify-center mt-15'>
                 <p className='text-center my-5 text-3xl font-semibold'>Related Doctors</p>
                 <p className='text-center text-sm'>Simply browse through our extensive list of trusted doctors.</p>
                 <div className='flex flex-wrap justify-center mt-4'>
                     {
                         relatedDrs.map((item, index) => (
-                            <div onClick={() => navigate(`/appointment/${item._id}`)} key={index} className='w-[18%] border-1 border-gray-300 m-1 p-2 rounded-md cursor-pointer'>
+                            <div onClick={() => navigate(`/appointment/${item._id}`)} key={index} className='md:w-[18%] w-full border-1 border-gray-300 m-1 p-2 rounded-md cursor-pointer'>
                                 <img src={item.image} alt="" />
                                 {
                                     item.available

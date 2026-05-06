@@ -59,7 +59,7 @@ function MyProfile() {
                         <i onClick={() => setOpenProfileImage(false)} className="fa-solid fa-xmark text-2xl font-thin cursor-pointer"></i>
                     </div>
                 </div>
-                : <div className="w-[80%] m-auto">
+                : <div className="w-[92%] md:w-[80%] m-auto">
                     {edit
                         ? <div className="w-40 h-40">
                             <label htmlFor="image">
@@ -73,8 +73,8 @@ function MyProfile() {
                     <p className="text-3xl mt-7 mb-3">{userData.name}</p>
                     <hr className="w-[50%] text-gray-300" />
                     <p className="mt-7 mb-3 text-gray-600 underline">CONTACT INFORMATION</p>
-                    <div className="w-[50%]">
-                        <div className="flex justify-between w-[70%]">
+                    <div className="w-full md:w-[70%]">
+                        <div className="flex justify-between md:w-[70%] w-full">
                             <p className="text-sm">Email id: </p>
                             {
                                 edit
@@ -83,7 +83,7 @@ function MyProfile() {
                             }
 
                         </div>
-                        <div className="flex justify-between w-[70%]">
+                        <div className="flex justify-between md:w-[70%] w-full">
                             <p className="text-sm">Phone: </p>
                             {
                                 edit
@@ -92,7 +92,7 @@ function MyProfile() {
                             }
 
                         </div>
-                        <div className="flex justify-between w-[70%]">
+                        <div className="flex justify-between md:w-[70%] w-full">
                             <p className="text-sm">Address: </p>
                             {
                                 edit
@@ -113,8 +113,8 @@ function MyProfile() {
                         </div>
                     </div>
                     <p className="text-gray-600 underline mt-7 mb-3">BASIC INFORMATION</p>
-                    <div className="w-[50%]">
-                        <div className="flex justify-between w-[70%]">
+                    <div className="w-full md:w-[70%]">
+                        <div className="flex justify-between md:w-[70%] w-full">
                             <p className="text-sm">Gender: </p>
                             {
                                 edit
@@ -127,7 +127,7 @@ function MyProfile() {
                             }
 
                         </div>
-                        <div className="flex justify-between w-[70%]">
+                        <div className="flex justify-between md:w-[70%] w-full">
                             <p className="text-sm">Birthday: </p>
                             {
                                 edit
