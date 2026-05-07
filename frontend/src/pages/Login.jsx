@@ -19,8 +19,8 @@ function Login() {
     async function handleSubmit(e) {
         e.preventDefault()
         try {
-            setRegisterLoading(true)
             if(account === "Sign up"){
+                setRegisterLoading(true)
                 const response = await axios.post(backend_url+"/api/user/register", {name, email, password}, {withCredentials:true})
                 if(response.data.success){
                     // setUToken(document.cookie.split("=")[1])

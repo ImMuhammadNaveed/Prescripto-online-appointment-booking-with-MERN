@@ -19,8 +19,13 @@ function Navbar() {
     const adminUrl = import.meta.env.VITE_ADMIN_URL
     const [openMenu, setOpenMenu] = useState(false)
     const [openDropdown, setOpenDropdown] = useState(false)
+    
     useEffect(() => {
         setOpenMenu(false)
+    }, [location.pathname])
+
+    useEffect(()=>{
+        setOpenDropdown(false)
     }, [location.pathname])
 
     function redirectToAdmin() {

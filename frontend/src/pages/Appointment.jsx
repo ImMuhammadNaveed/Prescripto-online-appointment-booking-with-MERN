@@ -43,10 +43,10 @@ function Appointment() {
             <div className="w-[92%] md:w-[80%] m-auto">
                 <div className="flex md:flex-row flex-col items-center">
                     <img src={docInfo&& docInfo.image} alt="" className="w-full md:w-62 object-contain bg-primary rounded-lg"/>
-                    <div className="border border-gray-500 rounded-lg p-6 ml-3">
+                    <div className="md:w-full border border-gray-500 rounded-lg p-6 w-[96%] md:ml-3 relative md:bottom-0 bottom-4 bg-white">
                         <p className="flex text-3xl font-semibold text-gray-600">{docInfo&& docInfo.name} <img className="w-5 ml-1" src={assets.verified_icon} alt="" /> </p>
                         <p className="text-gray-600">{docInfo&& docInfo.degree} - {docInfo&& docInfo.speciality}</p>
-                        <p className="flex">About <img className="w-3 ml-1" src={assets.info_icon} alt="" /> </p>
+                        <p className="flex font-semibold">About <img className="w-3 ml-1" src={assets.info_icon} alt="" /> </p>
                         <p className="text-gray-600 text-sm">{docInfo&& docInfo.about}</p>
                         <p className="mt-3">Appointment fee: <span className="font-semibold">${docInfo&& docInfo.fee}</span></p>
                     </div>

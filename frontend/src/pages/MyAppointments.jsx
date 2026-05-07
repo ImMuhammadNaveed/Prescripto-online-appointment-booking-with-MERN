@@ -2,10 +2,12 @@ import { useContext } from "react"
 import axios from 'axios'
 import { userContext } from "../context/Context"
 import { useState, useEffect } from "react"
+import Loading from "../components/Loading"
 
 function MyAppointments() {
     const { backend_url, isLoggedIn } = useContext(userContext)
     const [appointments, setAppointments] = useState([])
+    const [loading, setLoading] = useState(false)
 
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: "smooth" })
@@ -13,6 +15,7 @@ function MyAppointments() {
 
     async function getAppointments() {
         try {
+            setLoading(true)
             const { data } = await axios.get(backend_url + "/api/user/my-appointments", { withCredentials: true })
             console.log("my appointments: ", data)
             if (data.success) {
@@ -20,6 +23,8 @@ function MyAppointments() {
             }
         } catch (error) {
             console.log(error.response)
+        }finally{
+            setLoading(false)
         }
     }
     useEffect(() => { getAppointments() }, [isLoggedIn])
@@ -34,6 +39,11 @@ function MyAppointments() {
         } catch (error) {
             alert(error.message)
         }
+    }
+    if(loading){
+        return(
+            <Loading actionName={"Loading Appointments"}/>
+        )
     }
     return (
         <>
@@ -54,12 +64,12 @@ function MyAppointments() {
                                         <p className="text-gray-600">{item.slotDate + " " + item.slotTime}</p>
                                     </div>
                                 </div>
-                                <div className="flex flex-col gap-2">
+                                <div className="flex flex-col gap-2 mt-4">
                                     {item.cancelAppointment
                                         ? (<button className="border border-red-500 text-red-500 text-sm py-1 px-4">Cancelled</button>)
                                         : item.isCompleted ? (<button className="border border-green-500 text-green-500 text-sm py-1 px-4">Completed</button>)
-                                            : (<><button className="border py-2 px-3 hover:text-white hover:bg-indigo-500 transition-colors duration-300 cursor-pointer">Online payment</button>
-                                                <button className="border py-2 px-3 hover:text-white hover:bg-red-500 transition-colors duration-300 cursor-pointer" onClick={() => handleCancelAppointment(item._id)}>Cancel appointment</button></>)
+                                            : (<><button className="border py-2 px-3 hover:text-white hover:bg-indigo-500 transition-colors duration-300 cursor-pointer text-sm">Online payment</button>
+                                                <button className="border py-2 px-3 hover:text-white hover:bg-red-500 transition-colors duration-300 cursor-pointer text-sm" onClick={() => handleCancelAppointment(item._id)}>Cancel appointment</button></>)
                                     }
                                 </div>
                             </div>

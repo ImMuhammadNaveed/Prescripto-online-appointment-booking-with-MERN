@@ -12,7 +12,7 @@ function SpecialityMenu() {
                         specialityData.map((item, index) => (
                             <div onClick={() => navigate(`/doctors/${item.speciality}`)}
                                 key={index}
-                                className="flex flex-col items-center cursor-pointer min-w-[27%] md:min-w-0">
+                                className="flex flex-col items-center cursor-pointer min-w-[28%] md:min-w-0">
                                 <img src={item.image} alt="" className="md:w-20 w-16 object-contain" />
                                 <p className="mt-3 text-xs">{item.speciality}</p>
                             </div>
