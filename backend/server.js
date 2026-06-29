@@ -23,4 +23,4 @@ app.use("/api/user", userRouter)
 app.use("/api/doctor", doctorRouter)
 
 
-app.listen(process.env.PORT, ()=>{console.log("Server started!")})
+app.listen(process.env.PORT||10000, ()=>{console.log("Server started!")})
